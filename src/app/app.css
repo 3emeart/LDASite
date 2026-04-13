@@ -1,0 +1,21 @@
+.nav-header {
+    background-color: rgba(31, 128, 255, 0.785);
+    color: white;
+    padding: 1rem;
+    height: 90px;
+    padding: 40px;
+    box-shadow: 0 10px 25px -5px rgb(0, 0, 0);
+    z-index: 10;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+
+.button-row {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    padding-left: 100px;
+
+
+}

@@ -1,0 +1,138 @@
+<main class="camp-page">
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="camp-header">
+    <div class="camp-header-inner">
+      <div class="camp-header-text">
+        <span class="camp-season-badge">⚽ Temporada 2026</span>
+        <h1>Tabelas de <em>Classificação</em></h1>
+        <p>Acompanhe a classificação ao vivo dos campeonatos da Liga Desportiva de Aracinã</p>
+      </div>
+      <div class="camp-header-stats">
+        <div class="stat-pill">
+          <span class="stat-number">6</span>
+          <span class="stat-label">Times</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-number">10</span>
+          <span class="stat-label">Rodadas</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-number">30</span>
+          <span class="stat-label">Jogos</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CAMPEONATO CARD ===== -->
+  <section class="camp-section">
+    <div class="camp-card">
+
+      <!-- Card Header -->
+      <div class="camp-card-header">
+        <div class="camp-card-title">
+          <div class="trophy-icon">🏆</div>
+          <div>
+            <h2>Liga MASTER Municipal</h2>
+            <p class="camp-subtitle">Atletas acima de 38 anos · Fase de Grupos</p>
+          </div>
+        </div>
+        <span class="camp-status live">● Em Andamento</span>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrapper">
+        <table mat-table [dataSource]="dataSource" class="camp-table">
+
+          <!-- Pos Column -->
+          <ng-container matColumnDef="pos">
+            <th mat-header-cell *matHeaderCellDef class="col-pos">Pos</th>
+            <td mat-cell *matCellDef="let element; let i = index" class="col-pos">
+              <span class="pos-badge" [class.gold]="i === 0" [class.silver]="i === 1" [class.bronze]="i === 2">
+                {{ i + 1 }}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- Time Column -->
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef>Time</th>
+            <td mat-cell *matCellDef="let element" class="col-team">
+              <div class="team-name-wrapper">
+                <div class="team-avatar">{{ element.nome[0] }}</div>
+                <span>{{ element.nome }}</span>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- Jogos Column -->
+          <ng-container matColumnDef="jogos">
+            <th mat-header-cell *matHeaderCellDef>J</th>
+            <td mat-cell *matCellDef="let element">{{ element.jogos }}</td>
+          </ng-container>
+
+          <!-- Vitórias Column -->
+          <ng-container matColumnDef="vitorias">
+            <th mat-header-cell *matHeaderCellDef>V</th>
+            <td mat-cell *matCellDef="let element" class="col-win">{{ element.vitorias }}</td>
+          </ng-container>
+
+          <!-- Empates Column -->
+          <ng-container matColumnDef="empates">
+            <th mat-header-cell *matHeaderCellDef>E</th>
+            <td mat-cell *matCellDef="let element">{{ element.empates }}</td>
+          </ng-container>
+
+          <!-- Derrotas Column -->
+          <ng-container matColumnDef="derrotas">
+            <th mat-header-cell *matHeaderCellDef>D</th>
+            <td mat-cell *matCellDef="let element" class="col-loss">{{ element.derrotas }}</td>
+          </ng-container>
+
+          <!-- Gols Pró Column -->
+          <ng-container matColumnDef="golsMarcados">
+            <th mat-header-cell *matHeaderCellDef>GP</th>
+            <td mat-cell *matCellDef="let element">{{ element.golsPro }}</td>
+          </ng-container>
+
+          <!-- Gols Contra Column -->
+          <ng-container matColumnDef="golsSofridos">
+            <th mat-header-cell *matHeaderCellDef>GC</th>
+            <td mat-cell *matCellDef="let element">{{ element.golsContra }}</td>
+          </ng-container>
+
+          <!-- Saldo Column -->
+          <ng-container matColumnDef="saldoGols">
+            <th mat-header-cell *matHeaderCellDef>SG</th>
+            <td mat-cell *matCellDef="let element">
+              <span class="saldo" [class.pos]="element.saldoGols > 0" [class.neg]="element.saldoGols < 0">
+                {{ element.saldoGols > 0 ? '+' : '' }}{{ element.saldoGols }}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- Pontos Column -->
+          <ng-container matColumnDef="pontos">
+            <th mat-header-cell *matHeaderCellDef>Pts</th>
+            <td mat-cell *matCellDef="let element" class="col-pts">
+              <strong>{{ element.pontos }}</strong>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+      <!-- Legend -->
+      <div class="camp-legend">
+        <div class="legend-item"><span class="legend-dot gold"></span> Campeão</div>
+        <div class="legend-item"><span class="legend-dot silver"></span> Vice-campeão</div>
+        <div class="legend-item"><span class="legend-dot bronze"></span> 3º Lugar</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>

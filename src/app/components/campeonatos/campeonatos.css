@@ -1,0 +1,424 @@
+/* =========================================
+   CAMPEONATOS PAGE — Premium Dark Theme
+   ========================================= */
+
+/* ---------------- Page Shell ---------------- */
+.camp-page {
+  min-height: 100vh;
+  background: #07091a;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(31, 128, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(31, 128, 255, 0.08) 0%, transparent 50%);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #e8ecf4;
+}
+
+/* ---------------- Page Header ---------------- */
+.camp-header {
+  padding: 3.5rem 4rem 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(31, 128, 255, 0.08) 0%, transparent 100%);
+}
+
+.camp-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.camp-season-badge {
+  display: inline-block;
+  background: rgba(31, 128, 255, 0.2);
+  color: #5ea5ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(94, 165, 255, 0.3);
+  margin-bottom: 1rem;
+  animation: pulseLive 2s ease-in-out infinite;
+}
+
+.camp-header-text h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.camp-header-text h1 em {
+  font-style: normal;
+  color: #5ea5ff;
+}
+
+.camp-header-text>p {
+  color: rgba(232, 236, 244, 0.6);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Stats pills no header */
+.camp-header-stats {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 80px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  transition: border-color 0.25s;
+}
+
+.stat-pill:hover {
+  border-color: rgba(94, 165, 255, 0.4);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+/* ---------------- Section ---------------- */
+.camp-section {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 4rem 4rem;
+}
+
+/* ---------------- Card ---------------- */
+.camp-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Card Header */
+.camp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(90deg, rgba(31, 128, 255, 0.1) 0%, transparent 100%);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.camp-card-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trophy-icon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.camp-card-title h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 2px;
+}
+
+.camp-subtitle {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.camp-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+.camp-status.live {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  animation: pulseLive 2s infinite;
+}
+
+@keyframes pulseLive {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ---------------- Table Wrapper ---------------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* ---------------- Table Styles ---------------- */
+.camp-table {
+  width: 100%;
+  background: transparent !important;
+  border-collapse: collapse;
+}
+
+/* Header row */
+.camp-table .mat-mdc-header-row {
+  background: rgba(31, 128, 255, 0.12) !important;
+  border-bottom: 1px solid rgba(94, 165, 255, 0.2) !important;
+}
+
+.camp-table .mat-mdc-header-cell {
+  color: rgba(94, 165, 255, 0.9) !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  padding: 14px 16px !important;
+  border-bottom: none !important;
+  text-align: center !important;
+}
+
+/* Data rows */
+.camp-table .mat-mdc-row {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  transition: background 0.2s ease !important;
+}
+
+.camp-table .mat-mdc-row:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+  cursor: pointer;
+}
+
+.camp-table .mat-mdc-row:last-child {
+  border-bottom: none !important;
+}
+
+.camp-table .mat-mdc-cell {
+  color: #d4daea !important;
+  font-size: 0.92rem !important;
+  padding: 14px 16px !important;
+  border-bottom: none !important;
+  text-align: center !important;
+}
+
+/* Position column */
+.col-pos {
+  text-align: center !important;
+  width: 52px;
+}
+
+.pos-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.pos-badge.gold {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.pos-badge.silver {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(148, 163, 184, 0.3);
+}
+
+.pos-badge.bronze {
+  background: linear-gradient(135deg, #cd7c3e, #a0522d);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.35);
+}
+
+/* Team name column */
+.col-team {
+  text-align: left !important;
+  min-width: 180px;
+}
+
+.team-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1f80ff, #0d5fd4);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(31, 128, 255, 0.35);
+}
+
+/* Win column */
+.col-win {
+  color: #4ade80 !important;
+  font-weight: 600 !important;
+}
+
+/* Loss column */
+.col-loss {
+  color: #f87171 !important;
+  font-weight: 600 !important;
+}
+
+/* Saldo de gols */
+.saldo {
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.saldo.pos {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.saldo.neg {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+/* Pontos column */
+.col-pts {
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  color: #fff !important;
+}
+
+/* First row highlight */
+.camp-table .mat-mdc-row:first-child .mat-mdc-cell {
+  color: #fff !important;
+}
+
+/* ---------------- Legend ---------------- */
+.camp-legend {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.legend-dot.gold {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.legend-dot.silver {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+}
+
+.legend-dot.bronze {
+  background: linear-gradient(135deg, #cd7c3e, #a0522d);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .camp-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .camp-section {
+    padding: 0 1rem 2rem;
+    margin: 1.5rem auto;
+  }
+
+  .camp-header-stats {
+    gap: 0.6rem;
+  }
+
+  .stat-pill {
+    padding: 12px 16px;
+    min-width: 64px;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .camp-card-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .camp-table .mat-mdc-header-cell,
+  .camp-table .mat-mdc-cell {
+    padding: 10px 10px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .col-team {
+    min-width: 130px;
+  }
+}
