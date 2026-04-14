@@ -7,6 +7,7 @@ Este projeto é a interface web da Liga Desportiva de Aracinã, desenvolvida par
 - **Angular Material** (Componentes de UI e Tabelas)
 - **TypeScript** (Lógica e Tipagem)
 - **C# / .NET 10** (Integração com API Backend)
+- https://github.com/3emeart/LDABack
 
 ## 📌 Funcionalidades
 - [x] Tabela de classificação dinâmica consumindo API real.
