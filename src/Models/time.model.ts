@@ -1,4 +1,6 @@
 export interface Time {
+    golsSofridos: number;
+    golsMarcados: number;
     id?: number;
     nome: string;
     vitorias: number;
