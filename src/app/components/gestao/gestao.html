@@ -38,10 +38,40 @@
             </div>
           </div>
 
-          <div class="field-group">
-            <label for="pontos-time">Pontos</label>
-            <div class="input-wrapper">
-              <input id="pontos-time" type="number" [(ngModel)]="novoTime.pontos" placeholder="0" />
+          <div class="stats-grid">
+            <div class="field-group">
+              <label for="vitorias">Vitórias</label>
+              <div class="input-wrapper">
+                <input id="vitorias" type="number" [(ngModel)]="novoTime.vitorias" placeholder="0" />
+              </div>
+            </div>
+            
+            <div class="field-group">
+              <label for="empates">Empates</label>
+              <div class="input-wrapper">
+                <input id="empates" type="number" [(ngModel)]="novoTime.empates" placeholder="0" />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="derrotas">Derrotas</label>
+              <div class="input-wrapper">
+                <input id="derrotas" type="number" [(ngModel)]="novoTime.derrotas" placeholder="0" />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="gols-pro">Gols Pró</label>
+              <div class="input-wrapper">
+                <input id="gols-pro" type="number" [(ngModel)]="novoTime.golsPro" placeholder="0" />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="gols-contra">Gols Contra</label>
+              <div class="input-wrapper">
+                <input id="gols-contra" type="number" [(ngModel)]="novoTime.golsContra" placeholder="0" />
+              </div>
             </div>
           </div>
 
@@ -64,6 +94,12 @@
               <tr>
                 <th class="pos-col">#</th>
                 <th class="name-col">Time</th>
+                <th class="stat-col" title="Vitórias">V</th>
+                <th class="stat-col" title="Empates">E</th>
+                <th class="stat-col" title="Derrotas">D</th>
+                <th class="stat-col" title="Gols Pró">GP</th>
+                <th class="stat-col" title="Gols Contra">GC</th>
+                <th class="stat-col" title="Saldo de Gols">SG</th>
                 <th class="pts-col">PTS</th>
                 <th class="actions-col">Ações</th>
               </tr>
@@ -72,6 +108,12 @@
               <tr *ngFor="let time of times; let i = index" [class.highlight]="time.id === novoTime.id">
                 <td class="pos-col"><span class="rank">{{ i + 1 }}</span></td>
                 <td class="name-col">{{ time.nome }}</td>
+                <td class="stat-col">{{ time.vitorias }}</td>
+                <td class="stat-col">{{ time.empates }}</td>
+                <td class="stat-col">{{ time.derrotas }}</td>
+                <td class="stat-col">{{ time.golsPro }}</td>
+                <td class="stat-col">{{ time.golsContra }}</td>
+                <td class="stat-col">{{ time.saldoGols }}</td>
                 <td class="pts-col"><span class="points-badge">{{ time.pontos }}</span></td>
                 <td class="actions-col">
                   <button class="icon-btn edit-btn" title="Editar" (click)="prepararEdicao(time)">
@@ -89,7 +131,7 @@
                 </td>
               </tr>
               <tr *ngIf="times.length === 0">
-                <td colspan="4" class="empty-state">
+                <td colspan="10" class="empty-state">
                   <div class="empty-content">Nenhum time cadastrado no momento.</div>
                 </td>
               </tr>

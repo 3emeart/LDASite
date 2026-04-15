@@ -169,6 +169,12 @@
   gap: 20px;
 }
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
 .field-group {
   display: flex;
   flex-direction: column;
@@ -311,6 +317,7 @@
 
 .pos-col { width: 50px; text-align: center; }
 .name-col { font-weight: 500; font-size: 1rem; }
+.stat-col { width: 40px; text-align: center; }
 .pts-col { width: 80px; text-align: center; }
 .actions-col { width: 100px; text-align: center; }
 
